@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+i {
+  pointer-events: none;
+}
+
+body {
+  background: linear-gradient(90deg, rgb(248, 223, 176), rgb(158, 97, 18));
+}
+
+header {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: white;
+    font-size: 3rem;
+  }
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  input,
+  button {
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.75rem;
+    margin: 0.2rem;
+    border-radius: 8px;
+  }
+  input[type="number"] {
+    width: 80px;
+    text-align: center;
+  }
+
+  //   移除number的箭頭--------
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  //   移除number的箭頭--------
+
+  button {
+    cursor: pointer;
+    background-color: rgb(138, 79, 2);
+    color: white;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.75rem;
+    &:hover {
+      background-color: rgb(247, 202, 143);
+      color: rgb(138, 79, 2);
+    }
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div.todo {
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.2rem 0rem;
+    transition: all 0.1s ease;
+
+    p {
+      background-color: white;
+      color: black;
+      padding: 0.25rem 0.5rem;
+      font-size: 1.75rem;
+    }
+    p.todo-text {
+      width: 50%;
+      border-radius: 8px 0 0 8px;
+    }
+    p.todo-time {
+      width: 20%;
+      text-align: center;
+    }
+    button {
+      padding: 0.25rem 0.5rem;
+      font-size: 2rem;
+      border: none;
+      cursor: pointer;
+      color: white;
+    }
+    button.complete {
+      background-color: #589f11;
+    }
+    button.trash {
+      background-color: #e94013;
+      border-radius: 0 8px 8px 0;
+    }
+  }
+}
+
+div.sort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0rem;
+
+  button {
+    cursor: pointer;
+    background-color: rgb(138, 79, 2);
+    color: white;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.75rem;
+    border-radius: 8px;
+    &:hover {
+      background-color: rgb(247, 202, 143);
+      color: rgb(138, 79, 2);
+    }
+  }
+}
+
+.done {
+  opacity: 0.5;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.2rem;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes scaleDown {
+  to {
+    transform: scale(0);
+  }
+}
